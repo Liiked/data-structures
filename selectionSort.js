@@ -16,6 +16,26 @@ function selectionSort(arr) {
     }
 }
 
+// 自己实现的版本
+function selectSort (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let outter = arr[i];
+        let min;
+        let position;
+        for (let j = i; j < arr.length; j++) {
+            const inner = arr[j];
+            if (!min || inner < min) {
+                min = inner;
+                position = j;
+            }
+        }
+        if (outter > min) {
+            swap(arr, i, position)
+        }
+    }
+    return arr;
+}
+
 
 function swap(arr, index1, index2) {
     [arr[index1], arr[index2]] = [arr[index2], arr[index1]]
